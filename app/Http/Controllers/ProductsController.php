@@ -39,7 +39,7 @@ class ProductsController extends Controller
             ->with(['msbrand', 'mscategory']) 
             ->firstOrFail();
         
-        if (!$products){
+        if (!$product){
             abort(404);
         }
 
