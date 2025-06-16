@@ -65,7 +65,7 @@
                         <button type="submit" class="btn btn-success" {{ $product->product_stock == 0 ? 'disabled data-bs-toggle=tooltip data-bs-placement=top title=Stok%20habis%2C%20tidak%20bisa%20dibeli' : '' }}>Buy</button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="buy-btn">Buy</a>
+                    <a href="{{ route('login') }}"><button type="submit" class="buy-btn">Buy</button></a>
                 @endauth
             </div>
         </div>

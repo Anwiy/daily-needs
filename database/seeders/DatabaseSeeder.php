@@ -28,19 +28,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // MsCategory::factory(6)->create();
+        MsCategory::factory(6)->create();
         MsPaymentMethod::factory(3)->create();
-        // MsAdmin::factory(10)->create();
-        // MsCustomer::factory(20)->create();
-        // MsCourier::factory(10)->create();
-        // MsCompany::factory(5)->create();
-        // MsBrand::factory(15)->create();
-        // MsTopUp::factory(10)->create();
-        // MsCustomerAddress::factory(30)->create();
-        // TransactionHeader::factory(30)->create();
-        // MsProduct::factory(20)->create();
-        // TransactionDetail::factory(50)->create();
-        // MsShipment::factory(30)->create();
-        // MsCart::factory(20)->create();
+        MsAdmin::factory(10)->create();
+        MsCustomer::factory(20)->create();
+        MsCourier::factory(10)->create();
+        MsCompany::factory(5)->create();
+        MsBrand::factory(15)->create();
+        MsTopUp::factory(10)->create();
+        MsCustomerAddress::factory(30)->create();
+        TransactionHeader::factory(30)->create();
+        MsProduct::factory(20)->create();
+        TransactionDetail::factory(50)->create();
+        MsShipment::factory(30)->create();
+        MsCart::factory(20)->create();
     }
 }

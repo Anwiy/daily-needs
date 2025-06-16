@@ -177,27 +177,33 @@ body{
 }
 
 .buy-btn {
-    width: 8%;
+    width: 100%;
+    padding: 10px;
     color: black;
     background-color: #ccc7b1;
     border-color: black;
-    margin-bottom: auto;
+    border-radius: 10px;
+    transition: 0.15s;
 }
 
 .buy-btn:hover{
+    color: white;
     background-color: #699935 !important;
 }
 
 .add-to-cart-btn {
-    width: 8%;
-    color: #D1D88D;
-    background-color: #485935; 
+    width: 100%;
+    color: black;
+    background-color: #ccc7b1; 
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.15s;
 }
 
 .add-to-cart-btn:hover {
-    width: 8%;
-    color: #9ca547;
-    background-color: #4f8e07; 
+    width: 100%;
+    color: white;
+    background-color: #699935; 
 }
 
 #quantity-error {

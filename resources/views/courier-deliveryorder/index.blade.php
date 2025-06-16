@@ -115,7 +115,7 @@
                     
                         <div class="input-group">
                             <input type="text" name="courier_search" value="{{ request('courier_search') }}" class="form-control" placeholder="Type here to search">
-                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-success">Search</button>
                         </div>
                     </form>
             
@@ -180,7 +180,7 @@
                 
                     <div class="input-group">
                         <input type="text" name="courier_search" value="{{ request('courier_search') }}" class="form-control" placeholder="Type here to search">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-success">Search</button>
                     </div>
                 </form>
                 <table class="w-100 border-collapse text-center">
@@ -247,7 +247,7 @@
             
                 <div class="input-group">
                     <input type="text" name="courier_search" value="{{ request('courier_search') }}" class="form-control" placeholder="Type here to search">
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-success">Search</button>
                 </div>
             </form>
                 <table class="w-100 border-collapse text-center">

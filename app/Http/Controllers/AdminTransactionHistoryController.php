@@ -39,7 +39,8 @@ class AdminTransactionHistoryController extends Controller
                                         'payment_method' => $request->input('payment_method')
                                     ])
                                     ->orderBy('transaction_date', 'desc')
-                                    ->paginate(10);
+                                    ->paginate(10)
+                                    ->withQueryString();
         }
 
         else if ($status === 'out-for-delivery')
@@ -55,7 +56,8 @@ class AdminTransactionHistoryController extends Controller
                                         'payment_method' => $request->input('payment_method')
                                     ])
                                     ->orderBy('transaction_date', 'desc')
-                                    ->paginate(10);
+                                    ->paginate(10)
+                                    ->withQueryString();
         }
 
         else if ($status === 'shipped')
@@ -71,7 +73,8 @@ class AdminTransactionHistoryController extends Controller
                                         'payment_method' => $request->input('payment_method')
                                     ])
                                     ->orderBy('transaction_date', 'desc')
-                                    ->paginate(10);
+                                    ->paginate(10)
+                                    ->withQueryString();
         }
 
         else if ($status === 'completed')
@@ -87,7 +90,8 @@ class AdminTransactionHistoryController extends Controller
                                         'payment_method' => $request->input('payment_method')
                                     ])
                                     ->orderBy('transaction_date', 'desc')
-                                    ->paginate(10);
+                                    ->paginate(10)
+                                    ->withQueryString();
         }
 
         else if ($status === 'cancelled')
@@ -103,7 +107,12 @@ class AdminTransactionHistoryController extends Controller
                                         'payment_method' => $request->input('payment_method')
                                     ])
                                     ->orderBy('transaction_date', 'desc')
-                                    ->paginate(10); 
+                                    ->paginate(10)
+                                    ->withQueryString(); 
+        }
+
+        else {
+            $data = collect();
         }
 
         $data->each(function ($data) {
