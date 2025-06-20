@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transaction_headers', function (Blueprint $table) {
             $table->id('transaction_id')->unique();
             $table->dateTime('transaction_date', precision: 0);
-            $table->enum('transaction_status', ['Pending', 'Processing', 'Shipped', 'Completed', 'Cancelled']);
+            $table->enum('transaction_status', ['Pending', 'Processing', 'Out for Delivery', 'Shipped', 'Completed', 'Cancelled']);
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('customer_address_id');
             $table->unsignedBigInteger('admin_id')->nullable();

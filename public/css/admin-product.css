@@ -1,0 +1,194 @@
+i.bi.bi-arrow-left-circle{
+    color: black !important;
+    font-size: larger !important;
+}
+
+
+.main-container{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.kiri-container, .kanan-container{
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+input.form-control1,
+    select.form-control1,
+    textarea.form-control1 {
+        border: none !important;
+        box-shadow: none !important; 
+        outline: none !important;    
+        color: black !important;
+        opacity: 1 !important;
+        margin-bottom: 10px;
+    }
+
+
+.input-group{
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    margin-left: 10px !important;
+}
+
+.kanan-container{
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+#productimg{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[name="product_name"] {
+    font-size: 30px !important; 
+    border: none;
+    color: black !important;
+    /* text-decoration: underline; */
+    font-weight: bold;
+    
+}
+
+input[name="product_price"] {
+    font-size: 30px !important; 
+    border: none;
+    border-bottom: solid 1px black;
+    color: black !important;
+    /* text-decoration: underline; */
+    font-weight: bold;
+    
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input.form-control1,
+.input-with-icon textarea.form-control1 {
+    width: 100%;
+    padding-right: 30px; /* kasih space biar gak nabrak ikon */
+}
+
+.input-with-icon .edit-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.input-with-icon textarea.form-control1 {
+    min-height: 80px;
+}
+
+.input-with-icon.textarea-icon .edit-icon {
+    top: 8px; /* khusus untuk textarea: letakkan ikon di kanan atas */
+    transform: none;
+}
+
+
+.edit-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.edit-icon:hover {
+    color: #dede9c;
+}
+
+#prodesc{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+#preview{
+    margin-left: 20px;
+    max-width: 400px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px; 
+    margin-bottom: 10px;
+}
+
+#inputimg{
+    margin-left: 60px;
+    max-width: 100px;
+    width: 100%;
+}
+
+
+.btn-file-custom {
+    padding: 4px 8px;
+    font-size: 16px;
+}
+
+label.btn.btn-success.btn-sm{
+    margin: 0px;
+    margin-left: 20px;
+    padding-top: 8px;
+    font-size: 12px;
+    max-width: 100px;
+    width: 100%;
+    height: 35px;
+}
+
+textarea{
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+select{
+    font-weight: 500;
+}
+
+hr{
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+input#product_stock.form-control1{
+    max-width: 60px;
+    width: 100%;
+    border-bottom: solid 1px black;
+}
+
+.input-group-kanan{
+    margin-top: 2px;
+    border: none;
+}
+
+button#decrease-btn,
+button#increase-btn {
+    border: none !important;
+    background-color: #dede9c;
+    border-radius: 8px;
+    padding: 5px 12px;
+}
+
+
+input#product_stock.form-control1 {
+    border: 0.5px solid rgba(0, 0, 0, 0.566) !important;
+    border-radius: 6px;
+    max-width: 60px;
+    width: 100%;
+    text-align: center;
+}

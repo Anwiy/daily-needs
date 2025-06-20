@@ -13,9 +13,19 @@ class CustomerPurchaseHistoryController extends Controller
     public function index(Request $request)
     {
         $customers = Auth::guard('customer')->user();
-        $status = $request->query('status', 'Completed');
 
-        
+        $statusMap = [
+            'pending' => 'Pending',
+            'processing' => 'Processing',
+            'out-for-delivery' => 'Out for Delivery',
+            'shipped' => 'Shipped',
+            'completed' => 'Completed',
+            'cancelled' => 'Cancelled',
+        ];
+
+        $urlStatus = $request->query('status', 'Completed');
+        $status = $statusMap[$urlStatus] ?? 'Completed';
+
         $transactions = TransactionHeader::with(['transactiondetail.msproduct', 'mspaymentmethod', 'mscustomeraddress'])
             ->where('customer_id', $customers->customer_id)
             ->filter([
@@ -23,9 +33,14 @@ class CustomerPurchaseHistoryController extends Controller
                 'search' => $request->query('search')
             ])
             ->orderBy('transaction_date', 'desc')
-            ->get();
+            ->paginate(10)
+            ->withQueryString();
 
-        return view('purchasehistory.index', compact('transactions', 'status'));
+        return view('purchasehistory.index', [
+            'transactions' => $transactions,
+            'status' => $status,
+            'statusMap' => $statusMap,
+        ]);
     }
 
     public function cancelOrder($transaction_id)
@@ -65,5 +80,25 @@ class CustomerPurchaseHistoryController extends Controller
         $transaction->save();
 
         return redirect()->back()->with('success', 'Order successfully cancelled. Your balance has been refunded.');
+    }
+
+    public function confirmOrder($transaction_id)
+    {
+        $transaction = TransactionHeader::with('transactiondetail.msproduct', 'mspaymentmethod')->findOrFail($transaction_id);
+
+        $customer = Auth::guard('customer')->user();
+
+        if ($transaction->customer_id != $customer->customer_id) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        if ($transaction->transaction_status != 'Shipped') {
+            return redirect()->back()->with('error', 'This order cannot be confirm.');
+        }
+
+        $transaction->transaction_status = 'Completed';
+        $transaction->save();
+
+        return redirect()->back()->with('success', 'Order successfully completed.');
     }
 }

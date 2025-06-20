@@ -20,39 +20,62 @@
     </div>
 @endif
 
-<div>
-    <h1>Login</h1>
-</div>
 
-<form action="/login" method="post">
-    @csrf
+<div class="container">
+    <div class="left-side">
+        <img src="assets/image/customer-login-background.jpg" alt="" class="image">
+    </div>
+    
 
-    <div>
-        <div>
-            <p class="signup">Don't have any account? <a href="/signup">Sign Up</a></p>
+    <div class="form-container">
+        <form action="/login" method="post" class="customer-login-container">
+        @csrf
+        
+        <div class="title-login">
+            <h1>Login</h1>
         </div>
-        <div>    
-            <label for="customer_email">Email</label>
-            <input type="email" name="customer_email" id="customer_email" class="form-control @error('customer_email') is-invalid @enderror" placeholder="Enter your email" value="{{ old('customer_email') }}" autofocus required>
-            @error('customer_email')
-                <div class="invalid-feedback">
-                    {{ $message }}
+    
+        <div>
+            <div>
+                <p class="signup">Don't have any account? <a href="/signup">Sign Up</a></p>
+            </div>
+            <div class="form-group">    
+                <label for="customer_email">Email</label>
+                <input type="email" name="customer_email" id="customer_email" class="form-control @error('customer_email') is-invalid @enderror" placeholder="Enter your email" value="{{ old('customer_email') }}" autofocus>
+                @error('customer_email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+    
+            <div class="form-group">
+                <label for="customer_password">Password</label>
+                <div class="input-icon-wrapper">
+                    <input 
+                        type="password" 
+                        name="customer_password" 
+                        id="customer_password" 
+                        class="form-control @error('customer_password') is-invalid @enderror" 
+                        placeholder="Enter your password"
+                        
+                    >
+                    <i class="bi bi-eye-slash toggle-password"></i>
                 </div>
-            @enderror
+                @error('customer_password')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
         </div>
     
-        <div>
-            <label for="customer_password">Password</label>
-            <input type="password" name="customer_password" id="customer_password" class="form-control @error('customer_password') is-invalid @enderror" placeholder="Enter your password" required>
+        <div class="container-button">
+            <button type="submit">Login</button>
         </div>
+
+        </form>
     </div>
-    
-    <div>
-        <button type="submit">Login</button>
-    </div>
-
-</form>
-
-
+</div>
 
 @endsection

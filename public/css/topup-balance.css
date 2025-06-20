@@ -1,0 +1,189 @@
+.topup-container {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+  
+.topup-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+  
+.topup-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0b4000;
+    margin: 0;
+}
+  
+.back-button {
+    color: #0b4000;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+  
+.topup-content {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+  
+.topup-card {
+    background-color: #ccd68a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.balance-info {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #9ea35a;
+}
+  
+.balance-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+}
+  
+.balance-amount {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0b4000;
+    display: block;
+}
+  
+.topup-form {
+    margin-top: 1rem;
+}
+  
+.form-group {
+    margin-bottom: 1.25rem;
+}
+  
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #0b4000;
+    font-weight: 500;
+}
+  
+.form-control {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #9ea35a;
+    border-radius: 6px;
+    background-color: #e6ebcc;
+    color: #0b4000;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+  
+.form-control:disabled {
+    background-color: #d8ddb5;
+    cursor: not-allowed;
+}
+  
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(158, 163, 90, 0.3);
+    border-color: #7a803f;
+}
+  
+.submit-button {
+    background-color: #0b4000;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s;
+}
+  
+.submit-button:hover {
+    background-color: #092e00;
+}
+  
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+  
+.is-invalid {
+    border-color: #dc3545;
+}
+  
+.alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+  
+@media (max-width: 768px) {
+    .topup-container {
+      margin-left: 250px;
+      padding: 2rem;
+      min-height: calc(100vh - 200px);
+    }
+  
+    .main-footer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .topup-content,
+    .alert {
+      max-width: 100%;
+    }
+}
+  
+@media (max-width: 576px) {
+    .topup-container {
+      margin-left: 0;
+      min-height: calc(100vh - 180px);
+    }
+    .topup-content {
+      padding-bottom: 2rem;
+    }
+  
+    .topup-card {
+      padding: 1.25rem;
+    }
+  
+    .balance-amount {
+      font-size: 1.25rem;
+    }
+  
+    .form-control {
+      padding: 0.5rem;
+    }
+}
+  

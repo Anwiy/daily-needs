@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="/css/admin-sidebar.css">
     <link rel="stylesheet" href="/css/admin-addproduct.css">
     <link rel="stylesheet" href="/css/admin-processingorder.css">
+    <link rel="stylesheet" href="/css/admin-transactionhistory.css">
+    <link rel="stylesheet" href="/css/admin-myprofile.css">
+    <link rel="stylesheet" href="/css/admin-products.css">
 </head>
 
 <body>
     <div class="sidebar">
        
         <div class="logo-container">
-            <img src="{{ asset('assets/image/Title Icon.jpeg') }}" alt="Logo" class="logo">
+            <img src="{{ asset('assets/image/Title-Icon.jpeg') }}" alt="Logo" class="logo">
 
         </div>
         
@@ -42,7 +45,7 @@
                 </div>
             </a>
 
-            <a href="/admin/transaction-history" style="text-decoration: none; color: inherit;">
+            <a href="{{ route('admin.transaction-history', ['status' => 'completed']) }}" style="text-decoration: none; color: inherit;">
                 <div class = "menu-item">
                     <i class="bi bi-clock-history" style="color: #D1D88D;"></i>
                     <span>Transaction History</span>
@@ -65,5 +68,11 @@
     <script src="/js/admin-productstock.js"></script>
     <script src="/js/admin-addproduct.js"></script>
     <script src="/js/admin-processingorder.js"></script>
+    <script src="/js/admin-transactionhistory-processing.js"></script>
+    <script src="/js/admin-transactionhistory-outfordelivery.js"></script>
+    <script src="/js/admin-transactionhistory-shipped.js"></script>
+    <script src="/js/admin-transactionhistory-completed.js"></script>
+    <script src="/js/admin-transactionhistory-cancelled.js"></script>
+    <script src="/js/admin-myprofile.js"></script>
 </body>
 </html>

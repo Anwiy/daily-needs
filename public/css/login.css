@@ -1,4 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+body{
+    background-color: white !important;
+    margin: 0;
+    height: 100vh;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: white;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.left-side {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-side .image {
+    width: 130%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    background-color: black; 
+    
+}
+
+.form-container {
+    flex: 0 0 40%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-left: 200px !important;
+}
+
+.left-side, .form-container {
+    flex: 1;
+    min-width: 0; 
+}
+
+.customer-login-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.signup{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 .signup a{
     text-decoration: none;
-    color: salmon;
+    color: #05D716;
+    font-family: "Karla", sans-serif;  
+}
+
+p{
+    margin-left: 0px !important;
+    font-family: "Karla", sans-serif;  
+}
+
+h1{
+    margin-left: 0px !important;
+    font-family: "Poppins", sans-serif;
+}
+
+.container-button{
+    margin-top: 30px;
+    margin-right: 35px;
+    font-family: "Karla", sans-serif !important;
+}
+
+.container-button button{
+    width: 100%;
+    background-color: #D1D88D;
+    margin-top: 22px;
+    padding: 10px 20px;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, box-shadow 0.3s ease;
+}
+
+.container-button button:hover{
+    background-color: #485935;
+   color: white;
+}
+
+.form-group, label {
+    margin-bottom: 15px; 
+    font-family: "Karla", sans-serif !important;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding-right: 40px; 
+}
+
+
+.toggle-password {
+    position: absolute;
+    right: 60px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 18px; 
 }

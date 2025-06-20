@@ -39,7 +39,7 @@ $(document).ready(function() {
                                 data-country="${address.customer_address_country}"
                                 data-postal="${address.customer_address_postal_code}"
                                 data-bs-toggle="modal" data-bs-target="#updateAddressModal">
-                                Edit
+                                <i class="bi bi-pencil-square"></i>
                             </button>
                             <form class="delete-address" action="/address/delete/${address.customer_address_id}" method="POST">
                                 <input type="hidden" name="_token" value="${$('meta[name="csrf-token"]').attr('content')}">
@@ -50,7 +50,7 @@ $(document).ready(function() {
                             </form>
                             <strong>${address.customer_address_name}</strong>
                             <p>${address.customer_address_street}, ${address.customer_address_district}, ${address.customer_address_regency_city}, ${address.customer_address_province}, ${address.customer_address_country}, ${address.customer_address_postal_code}</p>
-                            <button class="btn btn-success btn-sm select-address" data-address="${address.customer_address_name}">
+                            <button class="btn btn-success btn-sm select-address" data-id="${address.customer_address_id}">
                                 Select
                             </button>
                         </div>
@@ -198,15 +198,15 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.select-address', function () {
+
         let card = $(this).closest('.card');
         let addressId = $(this).data('id');
         let addressName = card.find('strong').text();
         let fullAddress = card.find('p').text();
     
         let selectedFullAddress = `<span style="font-weight: 600;">${addressName}</span><br>${fullAddress}`;
-    
-        $('#selectedAddressText').html(selectedFullAddress);
         $('#selectedAddress').val(addressId);
+        $('#selectedAddressText').html(selectedFullAddress);
         $('#addressModal').modal('hide');
     });
 });

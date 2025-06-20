@@ -197,16 +197,7 @@ class CustomerBuyProductController extends Controller
                 $customers->customer_balance -= $totalPrice;
                 $customers->save();
             }
-
-            // if ($request->payment_method_id == 1) {
-            //     if ($customers->customer_balance < $totalPrice) {
-            //         throw new \Exception('Oops! Your current balance isn’t enough. Your current balance is Rp' . number_format($customers->customer_balance, 2));
-            //     }
-
-            //     $customers->customer_balance -= $totalPrice;
-            //     $customers->save();
-            // }
-
+            
             DB::commit();
             session()->forget(['checkout_cart', 'checkout_product_id', 'checkout_quantity']);
 

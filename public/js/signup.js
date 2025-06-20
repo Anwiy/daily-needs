@@ -1,16 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const passwordField = document.getElementById("customer_password");
+document.addEventListener('DOMContentLoaded', function () {
     const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("customer_password");
 
     togglePassword.addEventListener("click", function () {
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            togglePassword.classList.remove("bi-eye-slash");
-            togglePassword.classList.add("bi-eye");
-        } else {
-            passwordField.type = "password";
-            togglePassword.classList.remove("bi-eye");
-            togglePassword.classList.add("bi-eye-slash");
-        }
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+
+        this.classList.toggle("bi-eye");
+        this.classList.toggle("bi-eye-slash");
     });
 });

@@ -21,8 +21,8 @@ class MsCategoryFactory extends Factory
             static $usedCategories = [];
 
             $allCategories = [
-                'Food', 'Beverages', 'Household Supplies', 
-                'Daily Needs', 'Cleaning Products', 'Stationery'
+                'Foods', 'Beverages', 'Household Supplies', 
+                'Health Supplies', 'Kitchen Supplies', 'Fresh Products'
             ];
 
             $availableCategories = array_diff($allCategories, $usedCategories);

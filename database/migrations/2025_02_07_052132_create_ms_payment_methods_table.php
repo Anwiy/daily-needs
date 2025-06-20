@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('ms_payment_methods', function (Blueprint $table) {
             $table->id('payment_method_id')->unique();
             $table->enum('payment_method_name', ['Bank Transfer', 'Cash on Delivery', 'Application Balance'])->unique();
+            $table->string('payment_method_slug', length: 200)->unique();
             $table->timestamps();
         });
     }

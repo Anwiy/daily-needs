@@ -105,7 +105,6 @@ class CustomerViewCartController extends Controller
         ]);
     }
 
-
     public function update(Request $request, $brand_slug, $product_slug)
     {
         
@@ -129,6 +128,18 @@ class CustomerViewCartController extends Controller
         $maxStock = $product->product_stock;
         $currentQuantity = $cartItem->quantity;
         $newQuantity = $request->quantity;
+
+        if ($maxStock == 0) {
+            DB::table('ms_carts')
+                        ->where('customer_id', $customers->customer_id)
+                        ->where('product_id', $product->product_id)
+                        ->delete();
+            return response()->json([
+                'success' => true,
+                'message' => 'Product out of stock, removed from cart',
+                'new_quantity' => 0
+            ], 200);
+        }
     
         if ($newQuantity > $maxStock) {
             $cartItem->update(['quantity' => $maxStock]);
@@ -141,7 +152,7 @@ class CustomerViewCartController extends Controller
             ], 400);
         }
     
-        if ($newQuantity < 1) {
+        if ($newQuantity < 1 && $maxStock > 0) {
             $cartItem->update(['quantity' => 1]);
             return response()->json([
                 'error' => "Minimum quantity is 1!",

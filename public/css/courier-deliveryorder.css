@@ -1,0 +1,50 @@
+.table-row-hover {
+    transition: background-color 0.15s;
+}
+
+.table-row-hover:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
+.pagination-container {
+    position: sticky;
+    bottom: 0;
+    padding: 0.2rem;
+    left: 260px;
+    right: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-status {
+    color: #298221;
+    transition: color 0.2s;
+}
+
+.delivery-status.active {
+    color: rgb(57, 191, 36) !important;
+    font-weight: 600;
+}
+
+.delivery-status:hover {
+    color: rgb(57, 191, 36);
+}
+
+.container-header-delivery{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 13px;
+}
+
+.back-delivery {
+    color: black;
+}
+
+.container-header-delivery i{
+    font-weight: bold;
+    font-size: larger;
+    align-items: center;
+}

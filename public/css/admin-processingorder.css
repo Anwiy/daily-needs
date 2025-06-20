@@ -1,8 +1,19 @@
-.table-row-hover {
+.pending {
     transition: background-color 0.15s;
 }
 
-.table-row-hover:hover {
-    background-color: #d9d4bb;
+.pending:hover {
+    background-color: #eeeeee;
     cursor: pointer;
+}
+
+.pagination-container {
+    position: sticky;
+    bottom: 0;
+    left: 260px;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

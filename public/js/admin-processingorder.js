@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const rows = document.querySelectorAll(".table-row-hover")
+    const rows = document.querySelectorAll(".pending")
     rows.forEach(row => {
         row.addEventListener("click", function () {
-            document.getElementById("modalTransactionDate").textContent = row.dataset.transactiondate || '-';
-            document.getElementById("modalCustomer").textContent = row.dataset.customer || '-';
-            document.getElementById("modalAddress").textContent = row.dataset.address || '-';
-            document.getElementById("modalPayment").textContent = row.dataset.payment || '-';
-            document.getElementById("modalTotal").textContent = row.dataset.total || '-'
+            document.getElementById("modalTransactionDatePending").textContent = row.dataset.transactiondate || '-';
+            document.getElementById("modalCustomerPending").textContent = row.dataset.customer || '-';
+            document.getElementById("modalAddressPending").textContent = row.dataset.address || '-';
+            document.getElementById("modalPaymentPending").textContent = row.dataset.payment || '-';
+            document.getElementById("modalTotalPending").textContent = row.dataset.total || '-'
             const products = JSON.parse(row.dataset.products || '[]');
-            const tbody = document.querySelector("#modalProducts tbody");
+            const tbody = document.querySelector("#modalProductsPending tbody");
             tbody.innerHTML = ''
             products.forEach(product => {
                 const tr = document.createElement("tr");

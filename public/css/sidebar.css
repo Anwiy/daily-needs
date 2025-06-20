@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: #0B4000;
+    color: white;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.sidebar span{
+    font-weight: bold;
+}
+
+.logo {
+    width: 170px; 
+    height: auto;
+    max-width: 100%;
+    
+}
+
+.sidebar-container{
+    margin-top: 20px;
+}
+
+.sidebar-container a{
+    padding-top: 0px;
+}
+
+
+.sidebar .menu-item, .sidebar .menu-item-logout{
+    padding-left: 20px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    gap: 15px;
+    width: 250px;
+    
+}
+
+
+.menu-item-logout{
+    position: fixed; 
+    bottom: 20px;
+
+}
+
+.menu-item i, .menu-item-logout i{
+    font-size: 25px ;
+}
+
+.menu-item-logout button{
+    font-size: 18px;
+}
+
+.dropdown-item{
+    color: rgba(255, 255, 255, 0.893);
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sidebar form {
+    padding: 10px 15px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+
+.sidebar a:hover {
+    background-color: #d0d88d2b;
+}
+
+.sidebar form:hover {
+    background-color: #d0d88d2b;
+}
+
+.content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.menu-item-logout:hover {
+    background-color: #d0d88d2b;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

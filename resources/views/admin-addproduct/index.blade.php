@@ -39,7 +39,7 @@
                     <div class="text-container">
                         <div class="form-group">
                             <label>Category Name</label>
-                            <select name="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                            <select name="category_id" class="form-control @error('category_id') is-invalid @enderror select-add-product">
                                 <option value="">Select Category</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->category_id }}" 
@@ -57,7 +57,7 @@
 
                         <div class="form-group">
                             <label>Brand Name</label>
-                            <select name="brand_id" class="form-control @error('brand_id') is-invalid @enderror">
+                            <select name="brand_id" class="form-control @error('brand_id') is-invalid @enderror select-add-product">
                                 <option value="">Select Brand</option>
                                 @foreach ($brands as $brand)
                                     <option value="{{ $brand->brand_id }}" 

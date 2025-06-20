@@ -3,7 +3,13 @@
 @section('container')
 
     <div class="content">
-        <h2>Edit Profile</h2>
+
+        <div class="header-container">
+            <a href="{{ url()->previous() }}" class="back">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+            <h2 class="edit-profile">Edit Profile</h2>
+        </div>
     
         @if(session('success'))
             <div class="alert alert-success">
@@ -17,10 +23,22 @@
     
             <div class="form-group">
                 <label>Profile Photo</label>
-                <input type="file" name="customer_photo" class="form-control">
-                @if(auth('customer')->user()->customer_photo)
-                    <img src="{{ asset('storage/customer_photos/' . auth('customer')->user()->customer_photo) }}" alt="Profile Photo" width="100">
-                @endif
+                <input id="customer_photo_input" type="file" name="customer_photo" class="form-control" style="display: none;" onchange="previewImage(event)">
+                    
+                <label for="customer_photo_input" style="cursor: pointer;">
+                    @if(auth('customer')->user()->customer_photo && Storage::disk('public')->exists('customer_photos/' . auth('customer')->user()->customer_photo))
+                        <img 
+                            src="{{ asset('storage/customer_photos/' . auth('customer')->user()->customer_photo) }}" 
+                            alt="Profile Photo" 
+                            class="profile-photo" 
+                            id="profile-photo-preview"
+                        >
+                    @else
+                        <div class="profile-photo-placeholder">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                    @endif
+                </label>
             </div>
     
             <div class="form-group">
@@ -45,20 +63,20 @@
     
             <div class="form-group">
                 <label for="customer_gender">Gender</label>
-                <div>
-                    <div>
+                <div class="radio-btn">
+                    <div class="radio-btn">
                         <input type="radio" name="customer_gender" id="male" class="form-check-input @error('customer_gender') is-invalid @enderror" value="Male"
                             {{ old('customer_gender', $customers->customer_gender) == 'Male' ? 'checked' : '' }}>
                         <label for="male">Male</label>
                     </div>
 
-                    <div>
+                    <div class="radio-btn">
                         <input type="radio" name="customer_gender" id="female" class="form-check-input @error('customer_gender') is-invalid @enderror" value="Female"
                             {{ old('customer_gender', $customers->customer_gender) == 'Female' ? 'checked' : '' }}>
                         <label for="female">Female</label>
                     </div>
                     
-                    <div>
+                    <div class="radio-btn">
                         <input type="radio" name="customer_gender" id="prefer_not_to_say" class="form-check-input @error('customer_gender') is-invalid @enderror" value="Prefer not to say"
                             {{ old('customer_gender', $customers->customer_gender) == 'Prefer not to say' ? 'checked' : '' }}>
                         <label for="prefer_not_to_say">Prefer not to say</label>
@@ -90,6 +108,7 @@
                         {{ $message }}
                     </div>
                 @enderror
+                <label>Confirm Password</label>
                 <input type="password" name="customer_password_confirmation" class="form-control @error('customer_password_confirmation') is-invalid @enderror" placeholder="Confirm Password">
                 @error('customer_password_confirmation')
                     <div class="invalid-feedback">
@@ -98,7 +117,7 @@
                 @enderror
             </div>
     
-            <button type="submit" class="btn btn-success">Save Changes</button>
+            <button type="submit" class="button-submit-profile">Save Changes</button>
         </form>
     </div>
 

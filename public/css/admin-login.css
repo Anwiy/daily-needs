@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .admin-login-container{
     margin: auto;
     width:500px;
@@ -5,23 +7,20 @@
     align-items: center;
     padding: 20px;
     border-radius: 5%;
-    
-  
-
+    font-family: "Karla", sans-serif;
 }
 
 body{
-    background-color: #C7C2AB !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: white !important;
     height: 100vh;
     margin: 0;
     
 }
 
 .go-signup{
-    color: #FF0004;
+    color: #05D716;
+    font-family: "Karla", sans-serif;  
+    text-decoration: none;
 }
 
 .signup{
@@ -60,7 +59,7 @@ label{
 
 .admin-login-container button:hover{
     background-color: #485935;
-   
+    color: white;
 }
 
 .password-wrapper {

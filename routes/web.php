@@ -24,7 +24,7 @@ use App\Http\Controllers\CustomerPurchaseHistoryController;
 use App\Http\Controllers\CustomerAddressController;
 use App\Http\Controllers\AdminProcessingOrderController;
 use App\Http\Controllers\AdminTransactionHistoryController;
-use App\Http\Controllers\CourierDeliverOrderController;
+use App\Http\Controllers\CourierDeliveryOrderController;
 use App\Http\Controllers\ErrorController;
 
 /*
@@ -74,6 +74,7 @@ Route::middleware(['auth:customer', 'customer.access'])->group(function () {
 
         Route::get('/purchasehistory', [CustomerPurchaseHistoryController::class, 'index'])->name('purchasehistory.show');
         Route::patch('/purchasehistory/cancel-order/{transaction_id}', [CustomerPurchaseHistoryController::class, 'cancelOrder'])->name('purchasehistory.cancel');
+        Route::patch('/purchasehistory/confirm-order/{transaction_id}', [CustomerPurchaseHistoryController::class, 'confirmOrder'])->name('purchasehistory.confirm');
     });
 });
 
@@ -102,7 +103,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/processing-order', [AdminProcessingOrderController::class, 'index']);
         Route::post('/processing-order/confirm/{transaction_id}', [AdminProcessingOrderController::class, 'store'])->name('admin.confirm');
 
-        Route::get('/transaction-history', [AdminTransactionHistoryController::class, 'index']);
+        Route::get('/transaction-history', [AdminTransactionHistoryController::class, 'index'])->name('admin.transaction-history');
     });
 });
 
@@ -119,12 +120,15 @@ Route::prefix('courier')->group(function(){
         Route::get('/', [CourierUpdateProfileController::class, 'show']);
         Route::put('/myprofile/update', [CourierUpdateProfileController::class, 'update']);
 
-        Route::get('/deliver-order', [CourierDeliverOrderController::class, 'show']);
+        Route::get('/delivery-order', [CourierDeliveryOrderController::class, 'show'])->name('courier.delivery');
+        Route::post('/delivery-order/to-ship/{transaction_id}', [CourierDeliveryOrderController::class, 'store'])->name('courier.to-ship');
+    
+        Route::post('delivery-order/in-progress/{shipment_id}', [CourierDeliveryOrderController::class, 'update'])->name('courier.confirm');
+        Route::post('delivery-order/in-progress/cancel/{shipment_id}', [CourierDeliveryOrderController::class, 'cancel'])->name('courier.in-progress');
     });
-
 });
 
 Route::get('{brand_slug}/{product_slug}', [ProductsController::class, 'show'])->middleware('customer.access');
 Route::get('/{category_slug}', [CategoriesController::class, 'filterByCategory'])->middleware('customer.access');
 
-Route::fallback([ErrorController::class, 'notFound']);
+// Route::fallback([ErrorController::class, 'notFound']);

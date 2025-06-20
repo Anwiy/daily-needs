@@ -1,9 +1,9 @@
 function handleInsufficientBalance(form) {
     const balance = parseFloat($('#customerBalance').val());
     const totalPrice = parseFloat($('#totalPrice').val());
-    const selectedPayment = $('#selectedPayment').val();
+    const selectedPaymentName = $('#paymentMethod option:selected').data('name');
 
-    if (selectedPayment == 1 && balance < totalPrice) {
+    if (selectedPaymentName === 'Application Balance' && balance < totalPrice) {
         $('#currentBalanceText').text('Rp ' + balance.toLocaleString('id-ID'));
         let modal = new bootstrap.Modal(document.getElementById('insufficientBalanceModal'));
         modal.show();

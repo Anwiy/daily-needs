@@ -29,4 +29,9 @@ class MsCustomerAddress extends Model
         return "{$this->customer_address_street}, {$this->customer_address_district}, {$this->customer_address_regency_city}, {$this->customer_address_province}, {$this->customer_address_country} - {$this->customer_address_postal_code}";
     }
 
+    public function getCustomerShortAddressNameAttribute()
+    {
+        return "{$this->customer_address_regency_city}";
+    }
+
 }

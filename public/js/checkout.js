@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.select-address').click(function() {
-        let addressId = $(this).data('address-id');
+        let addressId = $(this).data('id');
         let addressText = $(this).text();
         $('#selectedAddress').val(addressId);
         $('#selectedAddressText').text(addressText);

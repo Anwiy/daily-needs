@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('unit_price_at_buy', total: 12, places: 2);
             $table->timestamps();
 
-            // $table->primary(['transaction_id', 'product_id']);
+            $table->primary(['transaction_id', 'product_id']);
 
             $table->foreign('transaction_id')->references('transaction_id')->on('transaction_headers')->onDelete('cascade');
             $table->foreign('product_id')->references('product_id')->on('ms_products')->onDelete('restrict');

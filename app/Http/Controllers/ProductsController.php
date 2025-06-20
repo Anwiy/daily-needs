@@ -28,6 +28,7 @@ class ProductsController extends Controller
 
     public function show($brand_slug, $product_slug)
     {
+        $customers = Auth::guard('customer')->user();
         $categories = MsCategory::all();
         $brands = MsBrand::where('brand_slug', $brand_slug)->firstOrFail();
         if (!$brands) {
@@ -43,7 +44,7 @@ class ProductsController extends Controller
             abort(404);
         }
 
-        return view('product.index', compact('product', 'categories', 'brands'));
+        return view('product.index', compact('product', 'categories', 'brands', 'customers'));
     }
 
 }

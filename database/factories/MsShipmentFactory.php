@@ -14,7 +14,7 @@ class MsShipmentFactory extends Factory
     /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array<string, mixed> 
      */
     public function definition(): array
     {
@@ -22,7 +22,7 @@ class MsShipmentFactory extends Factory
             'shipment_date_start' => $this->faker->dateTimeThisYear(),
             'shipment_date_end' => $this->faker->dateTimeThisYear(),
             'shipment_recipient_name' => $this->faker->name,
-            'shipment_status' => $this->faker->randomElement(['In Progress', 'Delivered']),
+            'shipment_status' => $this->faker->randomElement(['In Progress', 'Delivered', 'Cancelled']),
 
             'transaction_id' => TransactionHeader::inRandomOrder()->first()->transaction_id ?? TransactionHeader::factory(),
             'courier_id' => MsCourier::inRandomOrder()->first()->courier_id ?? MsCourier::factory(),

@@ -1,0 +1,44 @@
+.processing {
+    transition: background-color 0.15s;
+}
+
+.processing:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.out-for-delivery {
+    transition: background-color 0.15s;
+}
+
+.out-for-delivery:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.shipped {
+    transition: background-color 0.15s;
+}
+
+.shipped:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.completed {
+    transition: background-color 0.15s;
+}
+
+.completed:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.cancelled {
+    transition: background-color 0.15s;
+}
+
+.cancelled:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
